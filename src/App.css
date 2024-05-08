@@ -22,8 +22,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  max-width: 1280px;
   text-align: center;
 }
 
@@ -37,7 +35,7 @@ body {
   overflow-x: hidden;
   position: relative;
   background-color: #121212 !important;
-  color: #fff !important;
+  color: #ffffff !important;
   font-family: "Ubuntu Sans", sans-serif !important;
 }
 
@@ -100,7 +98,6 @@ p.danger {
 
 /************ Navbar Css ************/
 nav.navbar {
-  padding: 1.1rem 0.5rem;
   position: fixed;
   width: 100%;
   top: 0;
@@ -113,42 +110,79 @@ nav.navbar.scrolled {
   background-color: #121212;
 }
 
-nav.navbar a.navbar-brand {
-  width: 20%;
+a.navbar-brand,
+a.navbar-link {
+  color: #fff;
+  padding: 0 0.5rem;
+  text-shadow: -0.5px -0.5px #121212;
+}
+
+a.navbar-brand {
   font-weight: 700;
   font-size: x-large;
-  color: #fff;
 }
 
-nav.navbar a.nav-social {
-  font-weight: 700;
-  font-size: larger;
-  color: #fff;
-  display: inline-block;
-  margin: 1rem 0.5rem;
+nav.navbar div.container {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav.navbar .navbar-nav .nav-link.navbar-link {
-  font-weight: 400;
-  color: #fff;
-  letter-spacing: 0.8px;
-  padding: 1.6rem 1.6rem;
-  font-size: 1.1rem;
-  opacity: 0.75;
+#basic-navbar-nav {
+  max-width: 640px;
+
+  gap: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
-nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-  opacity: 1;
+#navbar-socials {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-nav.navbar button {
-  align-self: center;
-  height: 2.5rem;
+#basic-navbar-nav button a {
+  color: #121212;
 }
 
-button>a {
-  padding: 0 !important;
-  color: #121212 !important;
-  vertical-align: center;
+
+@media (max-width: 992px) {
+  nav.navbar div.container {
+    justify-content: space-between;
+  }
+
+  #basic-navbar-nav {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  #navbar-sections {
+    width: 100%;
+    align-self: flex-end;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  #navbar-socials {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  #basic-navbar-nav div.navbar-nav a.navbar-link:first-child {
+    margin-top: 1rem;
+  }
 }
