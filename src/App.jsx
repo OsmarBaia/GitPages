@@ -9,7 +9,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import NavBar from './components/navbar';
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0)
 
   return (
@@ -26,5 +26,3 @@ function App() {
     </>
   )
 }
-
-export default App

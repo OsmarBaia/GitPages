@@ -1,102 +1,12 @@
 @import url(./components/navbar.css);
+@import url(./components/banner.css);
 
-/* Custom Fonts */
-
-@font-face {
-  font-family: "Ubuntu Sans";
-  src: url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans&display=swap');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Ubuntu Sans";
-  src: url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@500&display=swap');
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Ubuntu Sans";
-  src: url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:wght@700&display=swap');
-  font-weight: 700;
-}
-
-/* Main Components */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 75px;
-}
-
-body {
-  font-weight: 400;
-  overflow-x: hidden;
-  position: relative;
-  background-color: #191527 !important;
-  color: #F2F1F3 !important;
-  font-family: "Ubuntu Sans", sans-serif !important;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-  line-height: normal;
-  color: #F2F1F3;
-}
-
-p,
-a,
-li,
-button,
-ul {
-  margin: 0;
-  padding: 0;
-  line-height: normal;
-  text-decoration: none;
-  color: #BDBAC4;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-img {
+.App {
   width: 100%;
-  height: auto;
-}
-
-button {
-  border: 0;
-  background-color: transparent;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  outline: none;
-}
-
-@media (min-width:1700px) {
-  main .container {
-    max-width: 100%;
-    padding: 0 150px;
-  }
-}
-
-p.success {
-  color: green;
-}
-
-p.danger {
-  color: red;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
 }
