@@ -10,12 +10,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import NavBar from './components/navbar';
 
 export default function App() {
-  const [count, setCount] = useState(0)
+  const [isDark, setIsDark] = useState(false);
 
   return (
-    <>
+    <div className='App' data-theme={isDark ? 'dark' : 'light'}>
       <header className='container-fluid'>
-        <NavBar></NavBar>
+        <NavBar isDark={isDark} handleChange={() => setIsDark(!isDark)} ></NavBar>
       </header>
       <main>
 
@@ -23,6 +23,6 @@ export default function App() {
       <footer>
 
       </footer>
-    </>
+    </div>
   )
 }

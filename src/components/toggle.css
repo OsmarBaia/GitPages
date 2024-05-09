@@ -1,0 +1,26 @@
+.toggle-container {
+    position: relative;
+    padding: 1rem 1.5rem 1rem 1rem;
+}
+
+.toggle {
+    visibility: hidden;
+}
+
+.toggle+label {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-text-color);
+}
+
+@media screen and (min-width:991px) {
+    .toggle-container {
+        padding: .5rem 1.5rem;
+    }
+}
+
+@media screen and (min-width:1366px) {
+    .toggle-container {
+        padding: 1rem 1.5rem;
+    }
+}

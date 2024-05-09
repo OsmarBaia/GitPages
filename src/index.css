@@ -26,18 +26,29 @@
 :root {
   --background-color: #191527;
   --foreground-color: #6E57E0;
-
   --primary-text-color: #F2F1F3;
   --secundary-text-color: #BDBAC4;
-  --tertiary-text-color: #6953D6;
 
-  --toogle-bg: cornflowerblue;
-  --toogle-bfg: darkslateblue;
+  --toggle-bg: cornflowerblue;
+  --toggle-fg: darkslateblue;
 
   --sucess-color: green;
   --danger-color: red;
 }
 
+[data-theme="light"] {
+  --background-color: #FBFBFE;
+  --foreground-color: #6E57E0;
+
+  --primary-text-color: #24232A;
+  --secundary-text-color: #6D6A7C;
+
+  --toogle-bg: f0eb9d;
+  --toogle-bfg: ffd000;
+
+  --sucess-color: green;
+  --danger-color: red;
+}
 
 html {
   scroll-behavior: smooth;
@@ -48,9 +59,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   position: relative;
-  background-color: var(--background-color) !important;
-  color: var(--primary-text-color) !important;
-  font-family: "Ubuntu Sans", sans-serif !important;
+  font-family: "Ubuntu Sans", sans-serif;
 }
 
 h1,

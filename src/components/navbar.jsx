@@ -5,8 +5,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 
+import { Toggle } from './toggle'
 
-export default function NavBar() {
+export default function NavBar({ handleChange, isDark }) {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
 
@@ -27,7 +28,7 @@ export default function NavBar() {
     const onUpdateActiveLink = (value) => { setActiveLink(value); }
 
     return (
-        <Navbar className={scrolled ? "scrolled" : ""} expand="lg" variant='dark'>
+        <Navbar className={scrolled ? "scrolled" : ""} expand="lg" variant={isDark ? 'dark' : 'light'}>
             <Container>
                 <Navbar.Brand href="#" className={activeLink === '' ? 'active navbar-brand' : 'navbar-brand'} onClick={() => onUpdateActiveLink('')}>osmarneto.dev</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -60,6 +61,9 @@ export default function NavBar() {
                                 Contato
                             </Nav.Link>
                         </Button>
+
+                        <Toggle isChecked={isDark} handleChange={handleChange}
+                        ></Toggle>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
