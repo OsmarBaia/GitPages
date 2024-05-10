@@ -6,7 +6,9 @@ import 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+//Componets
 import NavBar from './components/navbar';
+import Banner from './components/banner'
 
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -20,7 +22,8 @@ export default function App() {
           function changeTheme() {
             localStorage.setItem('isDark', JSON.stringify(!isDark));
             setIsDark(!isDark);
-          }}></NavBar>
+          }} />
+        <Banner />
       </header>
       <main>
 

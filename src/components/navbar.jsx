@@ -1,11 +1,7 @@
 import { useState, useEffect } from 'react';
-
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-
-import { Toggle } from './toggle'
+import { Nav, Navbar, Container } from 'react-bootstrap';
+import { Toggle } from './toggle';
+import './navbar.css'
 
 export default function NavBar({ handleChange, isDark }) {
     const [activeLink, setActiveLink] = useState('home');
@@ -14,6 +10,7 @@ export default function NavBar({ handleChange, isDark }) {
     useEffect(() => {
         const onScroll = () => {
             if (window.scrollY > 50) {
+                s
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -25,49 +22,41 @@ export default function NavBar({ handleChange, isDark }) {
         return () => window.removeEventListener('scroll', onScroll);
     }, [])
 
-    const onUpdateActiveLink = (value) => { setActiveLink(value); }
+    const onUpdateActiveLink = (value) => setActiveLink(value);
 
     return (
         <Navbar className={scrolled ? "scrolled" : ""} expand="lg" variant={isDark ? 'dark' : 'light'}>
             <Container>
-                <Navbar.Brand href="#" className={activeLink === '' ? 'active navbar-brand' : 'navbar-brand'} onClick={() => onUpdateActiveLink('')}>osmarneto.dev</Navbar.Brand>
+                <Navbar.Brand href="#home" className="">OsmarNeto.dev</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
                         <div id='navbar-sections'>
-                            <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>
+                            <Nav.Link href="#home" className={activeLink === 'home' ? 'active-link navbar-link' : 'navbar-link'} onClick={() => { onUpdateActiveLink('home') }}>
                                 Início
                             </Nav.Link>
-                            <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>
+                            <Nav.Link href="#about" className={activeLink === 'about' ? 'active-link navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('about')}>
+                                Sobre
+                            </Nav.Link>
+                            <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active-link navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>
                                 Habilidades
                             </Nav.Link>
-                            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>
+                            <Nav.Link href="#jobs" className={activeLink === 'jobs' ? 'active-link navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('jobs')}>
+                                Serviços
+                            </Nav.Link>
+                            <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active-link navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>
                                 Projetos
                             </Nav.Link>
-                        </div>
-                        <div id='navbar-socials'>
-                            <Nav.Link className='navbar-link social-media' href="https://www.instagram.com/osmarortsac/" target='blank'>
-                                <i class="bi bi-instagram"></i>
-                            </Nav.Link>
-                            <Nav.Link className='navbar-link social-media' href="https://www.linkedin.com/in/osmarbaia/" target='blank'>
-                                <i class="bi bi-linkedin"></i>
-                            </Nav.Link>
-                            <Nav.Link className='navbar-link social-media' href="https://www.behance.net/osmarneto8" target='blank'>
-                                <i class="bi bi-behance"></i>
-                            </Nav.Link>
-                        </div>
-                        <Button variant="light">
-                            <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>
+                            <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active-link navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>
                                 Contato
                             </Nav.Link>
-                        </Button>
-
+                        </div>
                         <Toggle isChecked={isDark} handleChange={handleChange}
-                        ></Toggle>
+                        />
                     </Nav>
                 </Navbar.Collapse>
             </Container>
-        </Navbar>
+        </Navbar >
     );
 }
 

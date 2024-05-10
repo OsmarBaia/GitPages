@@ -13,6 +13,11 @@
     color: var(--primary-text-color);
 }
 
+label:hover {
+    color: var(--foreground-color);
+    animation: scale-up-center 0.4s;
+}
+
 @media screen and (min-width:991px) {
     .toggle-container {
         padding: .5rem 1.5rem;

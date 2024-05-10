@@ -1,4 +1,5 @@
 import "./toggle.css";
+import { SunFill, MoonFill } from 'react-bootstrap-icons'
 
 export const Toggle = ({ handleChange, isChecked }) => {
     return (
@@ -10,7 +11,7 @@ export const Toggle = ({ handleChange, isChecked }) => {
                 onChange={handleChange}
                 checked={isChecked}
             />
-            <label htmlFor="check">{isChecked ? <i class="bi bi-sun-fill"></i> : <i class="bi bi-moon-fill"></i>}</label>
+            <label htmlFor="check">{isChecked ? <SunFill /> : <MoonFill />}</label>
         </div>
     );
 };

@@ -1,10 +1,14 @@
-/************ Navbar Css ************/
 nav.navbar {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 9999;
     transition: 0.32s ease-in-out;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 nav.navbar.scrolled {
@@ -14,7 +18,9 @@ nav.navbar.scrolled {
 
 a.navbar-brand,
 a.navbar-link {
-    padding: 0 0.5rem;
+    color: var(--primary-text-color);
+
+    /* VFX */
     background-image: linear-gradient(to right,
             var(--foreground-color),
             var(--foreground-color) 50%,
@@ -28,29 +34,60 @@ a.navbar-link {
     transition: all 0.3s ease-in-out;
 }
 
-a.navbar-brand:hover,
-a.navbar-link:hover {
-    background-position: 0;
+a.navbar-link {
+    display: block;
+    margin: .5rem 0;
+    font-weight: bold;
+    opacity: 0.8;
 }
 
-a.navbar-brand:hover::before,
-a.navbar-link:hover::before {
-    width: 100%;
+a.navbar-brand:hover,
+a.navbar-link:hover:not(:active) {
+    background-position: 0;
+    animation: scale-up-center 0.4s;
+}
+
+a.navbar-brand:active,
+a.navbar-link:active {
+    background-position: 0;
+    animation: scale-down-center 0.4s;
+}
+
+a.navbar-link.active-link {
+    background-image: none;
+    background-color: var(--foreground-color);
+    border-bottom: 1px solid var(--foreground-color);
+    border-width: 50%;
 }
 
 a.navbar-brand {
-    font-weight: 700;
+    font-weight: bolder;
     font-size: x-large;
 }
 
-a.navbar-brand.active {
-    color: var(--primary-text-color);
+div.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-a.navbar-link {
-    font-weight: 500;
-    font-size: large;
+button.navbar-toggler {
+    margin: 0 1rem;
 }
+
+@media (min-width: 992px) {
+    a.navbar-link {
+        display: inline-block;
+        margin: 0 .5rem;
+    }
+
+    #basic-navbar-nav {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+/* 
 
 .navbar-nav .navbar-link.active {
     color: var(--primary-text-color);
@@ -102,16 +139,7 @@ button.navbar-toggler {
     margin-right: 1rem;
 }
 
-@media (min-width: 992px) {
-    #navbar-sections {
-        flex-direction: row;
-        margin-left: 3rem;
-    }
 
-    #basic-navbar-nav button {
-        margin-top: 0;
-    }
-}
 
 @media (min-width: 1080px) {
     #navbar-sections {
@@ -119,12 +147,14 @@ button.navbar-toggler {
     }
 }
 
-
-@media (min-width: 1366px) {
-    nav.navbar div.container {
-        padding: 0 5rem;
+@media (min-width: 1200px) {
+    #navbar-sections {
+        padding: 0 4rem;
     }
+}
 
+
+@media (min-width: 1440px) {
     a.navbar-brand {
         font-size: xx-large;
     }
@@ -140,4 +170,4 @@ button.navbar-toggler {
     #navbar-sections {
         margin-left: 7rem;
     }
-}
+} */
