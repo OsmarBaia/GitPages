@@ -57,7 +57,7 @@ a.navbar-link {
     display: block;
     margin: .5rem 0;
     font-weight: bold;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
 
 a.navbar-brand:hover,
@@ -97,5 +97,13 @@ button.navbar-toggler {
     #basic-navbar-nav {
         display: flex;
         justify-content: flex-end;
+    }
+
+    #navbar-blur {
+        display: none;
+    }
+
+    button.navbar-toggler {
+        display: none;
     }
 }

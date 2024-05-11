@@ -4,16 +4,14 @@ import { Toggle } from './toggle';
 import './navbar.css'
 
 
-export default function NavBar({ handleChange, isDark }) {
+export default function NavBar({ handleTheme, isDark }) {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
-    const [isHidden, setHidden] = useState(true);
     const onUpdateActiveLink = (value) => { setActiveLink(value); }
 
     useEffect(() => {
         const onScroll = () => {
             if (window.scrollY > 50) {
-                s
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -25,30 +23,28 @@ export default function NavBar({ handleChange, isDark }) {
         return () => window.removeEventListener('scroll', onScroll);
     }, [])
 
-
+    // Navbar BG Blur
+    const navbarBgBlur_ref = useRef(null);
     const ToggleScreenBlur = () => {
-        navbarScreenBlur.current.classList.toggle('hidden');
+        navbarBgBlur_ref.current.classList.toggle('hidden');
     }
 
-    //NavBar Collapse WorkAround
-    const navbarToggler = useRef(null);
-    const navbarNavContainer = useRef(null);
-    const navbarScreenBlur = useRef(null);
-
+    //NavBar Collapse 
+    const navbarToggler_ref = useRef(null);
     function CollapseNavbar() {
-        navbarNavContainer.current.classList.toggle('show');
-        navbarToggler.current.classList.toggle('collapsed');
-        ToggleScreenBlur;
+        if (!navbarToggler_ref.current?.style.display === 'none') {
+            navbarToggler_ref.current?.click();
+        }
     }
 
     return (
         <Navbar className={scrolled ? "scrolled" : ""} expand="lg" variant={isDark ? 'dark' : 'light'}>
             <Container>
                 <Navbar.Brand href="#home" className="">OsmarNeto.dev</Navbar.Brand>
-                <Navbar.Toggle ref={navbarToggler} aria-controls="#basic-navbar-nav" onClick={() => { ToggleScreenBlur }} />
-                <Navbar.Collapse ref={navbarNavContainer} id="basic-navbar-nav">
+                <Navbar.Toggle ref={navbarToggler_ref} aria-controls="#basic-navbar-nav" onClick={() => { ToggleScreenBlur }} />
+                <Navbar.Collapse id="basic-navbar-nav">
                     <Nav>
-                        <div id='navbar-blur' ref={navbarScreenBlur}></div>
+                        <div id='navbar-blur' ref={navbarBgBlur_ref}></div>
                         <div id='navbar-sections'>
                             <Nav.Link href="#home" className={activeLink === 'home' ? 'active-link navbar-link' : 'navbar-link'} onClick={() => { CollapseNavbar(); onUpdateActiveLink('home'); }}>
                                 Início
@@ -69,7 +65,7 @@ export default function NavBar({ handleChange, isDark }) {
                                 Contato
                             </Nav.Link>
                         </div>
-                        <Toggle isChecked={isDark} handleChange={handleChange} />
+                        <Toggle isChecked={isDark} handleChange={handleTheme} onClick={CollapseNavbar()} />
                     </Nav>
                 </Navbar.Collapse>
             </Container>

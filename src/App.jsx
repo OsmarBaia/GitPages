@@ -15,14 +15,15 @@ export default function App() {
     return JSON.parse(localStorage.getItem('isDark'));
   });
 
+  const changeTheme = () => {
+    localStorage.setItem('isDark', JSON.stringify(!isDark));
+    setIsDark(!isDark);
+  }
+
   return (
     <div className='App' data-theme={isDark ? 'dark' : 'light'}>
       <header className='container-fluid'>
-        <NavBar isDark={isDark} handleChange={
-          function changeTheme() {
-            localStorage.setItem('isDark', JSON.stringify(!isDark));
-            setIsDark(!isDark);
-          }} />
+        <NavBar isDark={isDark} handleTheme={changeTheme} />
         <Banner />
       </header>
       <main>

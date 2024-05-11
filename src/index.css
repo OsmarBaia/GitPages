@@ -24,30 +24,37 @@
 }
 
 :root {
-  --background-color: #191527;
-  --foreground-color: #6E57E0;
-  --primary-text-color: #F2F1F3;
-  --secundary-text-color: #BDBAC4;
+  /* --foreground-color: #6E57E0; */
 
-  --toggle-bg: cornflowerblue;
-  --toggle-fg: darkslateblue;
+  --background-color: #191527;
+  --foreground-color: #C8BCF0;
+  /*C7BEF3*/
+
+  --primary-text-color: #FFFFFF;
+  --secundary-text-color: #C8BCF0;
 
   --sucess-color: green;
   --danger-color: red;
+
+  /* 402E99 */
+  --button-bg-color: #C8BCF0;
+  --button-text-color: #191527;
+  --button-active-color: #2152B5;
 }
 
 [data-theme="light"] {
-  --background-color: #FBFBFE;
-  --foreground-color: #6E57E0;
+  --background-color: #FFFFFF;
+  --foreground-color: #3A21B5;
 
   --primary-text-color: #24232A;
-  --secundary-text-color: #6D6A7C;
-
-  --toogle-bg: f0eb9d;
-  --toogle-bfg: ffd000;
+  --secundary-text-color: #493C3C;
 
   --sucess-color: green;
   --danger-color: red;
+
+  --button-bg-color: #3A21B5;
+  --button-text-color: #FFFFFF;
+  --button-active-color: #2152B5;
 }
 
 html {
@@ -132,6 +139,10 @@ p.danger {
 }
 
 /* Animations */
+scale-up-center {
+  animation: scale-up-center 0.4s;
+}
+
 .scale-down-center {
   animation: scale-down-center 0.4s;
 }
