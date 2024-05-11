@@ -126,12 +126,16 @@ p.danger {
   color: var(--danger-color);
 }
 
+/* Utils */
+.hidden {
+  display: none;
+}
+
+/* Animations */
 .scale-down-center {
   animation: scale-down-center 0.4s;
 }
 
-
-/* Animations */
 @keyframes scale-up-center {
   0% {
     transform: scale(1)

@@ -1,81 +1,87 @@
+section.banner h1,
+section.banner h2,
+section.banner p,
+section.banner button {
+    color: var(--primary-text-color);
+}
+
+section.banner h1 span {
+    border-bottom: 1px solid var(--foreground-color);
+    font-weight: bolder;
+}
+
+section.banner h2 {
+    opacity: 0.8;
+    font-size: large;
+    font-weight: 500;
+}
+
 .banner {
-    margin-top: 0;
-    padding: 260px 0 100px 0;
-    background-image: url('./assets/img/banner-bg.png');
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    padding: 3.5rem 0 1rem 0;
 }
 
-/* 
-
-.banner .tagline {
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    padding: 8px 10px;
-    background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    font-size: 20px;
-    margin-bottom: 16px;
-    display: inline-block;
-}
-
-.banner h1 {
-    font-size: 65px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    line-height: 1;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.banner p {
-    color: #B8B8B8;
-    font-size: 18px;
-    letter-spacing: 0.8px;
-    line-height: 1.5em;
-    width: 96%;
-}
-
-.banner button {
-    color: #fff;
-    font-weight: 700;
-    font-size: 20px;
-    margin-top: 60px;
-    letter-spacing: 0.8px;
+section.banner div.container,
+.banner-text {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.banner button svg {
-    font-size: 25px;
-    margin-left: 10px;
-    transition: 0.3s ease-in-out;
-    line-height: 1;
+section.banner div.container {
+    height: 100%;
+
 }
 
-.banner button:hover svg {
-    margin-left: 25px;
+.banner-section {
+    padding: 1rem 0;
+    width: 100%;
 }
 
-.banner img {
-    animation: updown 3s linear infinite;
+.banner-pic {
+    width: 100%;
+    height: auto;
 }
 
-@keyframes updown {
-    0% {
-        transform: translateY(-20px);
+.banner-text {
+
+    gap: .5rem;
+}
+
+button.banner-button {
+    margin: 1rem 0;
+    align-self: center;
+    font-size: large;
+    color: var(--primary-text-color);
+}
+
+.banner-text p {
+    margin: .5rem 0;
+    text-indent: 1rem;
+    text-align: justify;
+    font-size: large;
+}
+
+section.banner img {
+    width: 100%;
+    height: auto;
+    max-width: 340px;
+    border-radius: 50% 50% 70% 30% / 70% 45% 56% 30%;
+}
+
+@media (min-width:768px) {
+    .banner-content {
+        height: 100%;
+        align-items: center;
     }
 
-    50% {
-        transform: translateY(20px);
+    .banner-text p {
+        margin: 1rem 0;
     }
 
-    100% {
-        transform: translateY(-20px);
+    button.banner-button {
+        align-self: flex-start;
     }
 }
-
-.txt-rotate>.wrap {
-    border-right: 0.08em solid #666;
-} */
